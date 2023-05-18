@@ -1,0 +1,11 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+p{
+    margin-top: 20px;
+    text-align: left;
+    font-size: xx-large;
+    line-height: 20%;
+}
