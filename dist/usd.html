@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <style>
+    .gradient-animation {
+        background: linear-gradient(to right, #f43f5e, #ff5722, #ff9800, #ffc107, #ffeb3b, #cddc39, #8bc34a, #4caf50, #009688, #00bcd4, #03a9f4, #2196f3);
+        background-size: 200% auto;
+        animation: gradientAnimation 10s linear infinite;
+      }
+      .transparent-card {
+      background-color: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      }
+    .hover-text {
+      transition: font-size 0.3s linear;
+    }
+
+    .hover-text:hover {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+    .custom-input:focus {
+      outline: none;
+    }
+  
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% center;
+        }
+  
+        100% {
+          background-position: 100% center;
+        }
+      }
+    </style>
+    
+<script>
+  function usdcalculator(){
+    var amount =document.getElementById("amountinRS").value;
+    //Check to see if this input is empty or less than or equal to 1
+    //lets do maths
+    var total=amount/82.05
+    total = Math.round(total*100)/100;
+    total= total.toFixed(2);
+
+    //display of the amount
+    document.getElementById("TotalConversion").style.display = "block";
+    document.getElementById("conversion").innerHTML = total;
+  }
+
+  //Hide the tip amount on load
+    document.getElementById("TotalConversion"). style.display ="none";
+    document.getElementById("conversion"). style.display = "none";
+
+    document.getElementById("Convertor").onclick= function(){usdcalculator();};
+</script>
+</head>
+<body>
+    <div class="gradient-animation min-h-screen flex items-center justify-center">
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="w-[500px] h-[500px] text-gray-600 text-center shadow-2xl rounded-lg p-4 transparent-card">
+              <h1 class="text-center text-2xl font-semibold mb-3">Convert to USD</h1>
+              <label class="text-center">Enter the amount in RS You want to Convert in USD<input id="amountinRS" class="container rounded-lg font-medium ml-8 mb-6 bg-transparent shadow-2xl mt-3 w-[400px] h-[50px] text-center text-lg focus:outline-none custom-input" type="text"></label>
+              <button onclick="usdcalculator()" id="Convertor" class="container rounded-lg hover-text text-white font-medium ml-8 mb-6 bg-gray-500 mt-3 w-[200px] h-[50px] text-center">Convert</button>
+
+              <div class="mt-3" id="TotalConversion">
+                <h1 class="text-2xl mb-3 font-medium" >The Converson is</h1>
+                <sup>USD</sup><span class="text-2xl font-semibold" id="conversion">0.00</span>
+              </div><!--totalTip-->
+            </div>
+      </div>
+</body>
+</html>
