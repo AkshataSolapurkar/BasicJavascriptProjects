@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <style>
+    .gradient-animation {
+        background: linear-gradient(to right, #f43f5e, #ff5722, #ff9800, #ffc107, #ffeb3b, #cddc39, #8bc34a, #4caf50, #009688, #00bcd4, #03a9f4, #2196f3);
+        background-size: 200% auto;
+        animation: gradientAnimation 10s linear infinite;
+      }
+      .transparent-card {
+      background-color: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      }
+    .hover-text {
+      transition: font-size 0.3s ease-in-out;
+    }
+
+    .hover-text:hover {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+  
+      @keyframes gradientAnimation {
+        0% {
+          background-position: 0% center;
+        }
+  
+        100% {
+          background-position: 100% center;
+        }
+      }
+    </style>
+</head>
+<body>
+    <div class="gradient-animation min-h-screen flex items-center justify-center">
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="w-[500px] h-[500px] text-gray-600 shadow-2xl rounded-lg p-4 transparent-card">
+              <h1 class="text-center text-2xl font-semibold">Currency Convertor</h1>
+              <p class="text-center mb-6 font-normal">Select the Curreny you want to convert the RS into</p>
+              <div class="container rounded-lg font-medium ml-8 mb-6 bg-transparent shadow-lg w-[400px] h-[100px] hover-text text-center pt-10 text-lg"><a href="usd.html"><button>United States Dollar (USD)</button></a></div>
+              <div class="container rounded-lg font-medium ml-8 mb-6 bg-transparent shadow-lg w-[400px] h-[100px] hover-text text-center pt-10 text-lg"><a href="euro.html"><button>Euro (EUR)</button></a></div>
+              <div class="container rounded-lg font-medium ml-8 mb-6 bg-transparent shadow-lg w-[400px] h-[100px] hover-text text-center pt-10 text-lg"><a href="aed.html"><button>UAE Dirham (AED)</button></a></div>
+            </div>
+      </div>
+</body>
+</html>
